@@ -1,0 +1,30 @@
+# ============================================================
+# RAG Pipeline Configuration
+# ============================================================
+
+# Directory containing raw .txt and .md documents to ingest
+documents_dir: "./documents"
+
+# Local directory where ChromaDB will persist vector data
+vector_store_dir: "./vector_store_db"
+
+# ChromaDB collection name
+collection_name: "rag_chunks"
+
+# ---- Chunking -------------------------------------------------
+# Target chunk size in tokens (300–500 recommended)
+chunk_size: 400
+
+# Overlap between consecutive chunks in tokens
+chunk_overlap: 80
+
+# ---- Retrieval ------------------------------------------------
+# Number of top-K chunks to retrieve per query (3–5 recommended)
+top_k: 4
+
+# ---- Models ---------------------------------------------------
+# Local sentence-transformers embedding model (no API key needed)
+embedding_model: "all-MiniLM-L6-v2"
+
+# Groq LLM model for answer generation (fast, free tier)
+llm_model: "llama-3.3-70b-versatile"
